@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Card } from '../card.interface';
 
 @Component({
   selector: 'app-content',
@@ -6,9 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  buttonClicked = false;
-  
-  @Input() colorItem: string;
+  @Input() data: Card;
   @Output() clicked = new EventEmitter();
 
   constructor() { }
@@ -16,9 +15,8 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeColor(colorItem: string) {
-      this.clicked.emit(this.colorItem);
-      this.buttonClicked = true;
+  changeColor() {
+      this.clicked.emit(this.data.color);
   }
 
 }

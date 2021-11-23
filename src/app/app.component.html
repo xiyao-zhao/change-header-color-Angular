@@ -3,76 +3,15 @@
 </h1>
 <div class="container">
     <app-content
-        *ngFor="let colorItem of colors"
-        [colorItem]="colorItem"
+        *ngFor="let data of datalist"
+        [data]="data"
         (clicked)="colorHeader($event)"
-        [ngStyle]="{border: headerColor === colorItem 
-                            ? '1px solid ' + colorItem
+        [ngStyle]="{border: headerColor === data.color 
+                            ? '1px solid ' + data.color
                             : '1px solid transparent',
-                    'box-shadow': headerColor === colorItem 
-                            ? '8px 8px ' + colorItem
+                    'box-shadow': headerColor === data.color 
+                            ? '8px 8px ' + data.color
                             : '8px 8px transparent',
                     'border-radius': '10px'}"
     ></app-content>
 </div>
-
-
-
-<!-- <div class="container">
-    <div [ngClass]="{blueBorder: blueClicked === true}">
-        <h3>Moving down the cliffs and rocks toward the sea</h3>
-        <article>
-            The first rainfall of the wet season on Australia’s Christmas Island has begun, 
-            which means one thing is certain: Millions of bright red crabs are on the move 
-            once again to mate and spawn — shutting down roads and “turning up everywhere,” 
-            in the words of a local conservation agency.
-        </article>
-        <button 
-            [ngStyle]="{'background-color': 'blue'}"
-            (click)="changeBlue()">
-            Set blue
-        </button>
-    </div>
-    <div>
-        <h3>Moving down the cliffs and rocks toward the sea</h3>
-        <article>
-            The first rainfall of the wet season on Australia’s Christmas Island has begun, 
-            which means one thing is certain: Millions of bright red crabs are on the move 
-            once again to mate and spawn — shutting down roads and “turning up everywhere,” 
-            in the words of a local conservation agency.
-        </article>
-        <button 
-            [ngStyle]="{'background-color': 'black'}"
-            (click)="changeBlack()">
-            Set black
-        </button>
-    </div>
-    <div>
-        <h3>Moving down the cliffs and rocks toward the sea</h3>
-        <article>
-            The first rainfall of the wet season on Australia’s Christmas Island has begun, 
-            which means one thing is certain: Millions of bright red crabs are on the move 
-            once again to mate and spawn — shutting down roads and “turning up everywhere,” 
-            in the words of a local conservation agency.
-        </article>
-        <button 
-            [ngStyle]="{'background-color': 'red'}"
-            (click)="changeRed()">
-            Set red
-        </button>
-    </div>
-    <div>
-        <h3>Moving down the cliffs and rocks toward the sea</h3>
-        <article>
-            The first rainfall of the wet season on Australia’s Christmas Island has begun, 
-            which means one thing is certain: Millions of bright red crabs are on the move 
-            once again to mate and spawn — shutting down roads and “turning up everywhere,” 
-            in the words of a local conservation agency.
-        </article>
-        <button 
-            [ngStyle]="{'background-color': 'green'}"
-            (click)="changeGreen()">
-            Set green
-        </button>
-    </div>
-</div> -->
